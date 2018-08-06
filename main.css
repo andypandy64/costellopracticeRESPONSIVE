@@ -1,0 +1,345 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+}
+
+img:last-of-type {
+  width: 5px;
+}
+
+img {
+  width: 100%;
+}
+
+.mainMenu {
+  background: black;
+  width: 100%;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  padding: 25px 20px;
+  max-width: 1720px;
+  margin: 0 auto;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: .8rem;
+  width: fit-content;
+  letter-spacing: 0.5px;
+  transition: .3s all ease-in-out;
+}
+
+nav a:hover {
+  opacity: .7;
+}
+
+nav .logo {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.leftMenu, .rightMenu {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.rightMenu {
+  justify-self: end;
+}
+
+.firstPage {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  grid-template-rows: auto 1fr;
+  /* background: url("media/pexels-photo-609768.jpeg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed; */
+}
+
+.firstPageContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+/* Slideshow Stylings */
+
+.mySlides {
+  grid-column: 1;
+  grid-row: 1;
+  background: url("media/pexels-photo-609768.jpeg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+  display: none;
+}
+
+.test {
+  background: url("media/pexels-photo-509922.jpeg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.prev {
+  grid-column: 1;
+  grid-row: 1;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev, .next {
+  width: fit-content;
+  cursor: pointer;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  transition: 0.6s ease;
+  align-self: center;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dots {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  align-self: end;
+}
+
+.dot {
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* End */
+
+.titleText {
+  color: white;
+  max-width: 700px;
+  padding-bottom: 200px;
+  text-align: center;
+  text-shadow: 1px 1px black;
+  grid-column: 2;
+}
+
+.titleText p {
+  font-size: 2rem;
+  opacity: .9;
+}
+
+.titleText h1 {
+  text-transform: uppercase;
+  font-size: 7rem;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  height: 40px;
+  width: 40px;
+  display: none;
+  align-self: center;
+}
+
+.nav-toggle-label img {
+  /* width: 100%; */
+  width: 40px;
+  height: 40px;
+}
+
+.nav-toggle:checked ~ .leftMenu {
+    grid-row-start: 2;
+    grid-auto-flow: row;
+    justify-items: start;
+    padding-top: 30px;
+    display: grid;
+}
+
+.nav-toggle:checked:parent {
+  grid-template-rows: auto auto;
+}
+
+/* Second Page */
+
+.mainContent {
+  background: #FFFFFF;
+}
+
+.productsText {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productsText p {
+  margin: 0;
+  opacity: .4;
+}
+
+.productsText h1 {
+  margin: 0;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: auto minmax(auto, 1720px) auto;
+  margin-top: 50px;
+}
+
+.productBox {
+  grid-column-start: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  padding: 0 30px;
+  grid-gap: 40px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.productBox img {
+  max-height: 300px;
+  width: auto;
+  align-self: center;
+}
+
+.productBox h2, .productBox p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.productBox p {
+  opacity: .5
+}
+
+/* .productBox div {
+  transition: .5s all ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+} */
+
+.productBox div {
+  display: grid;
+}
+
+.productBox div:hover {
+  cursor: pointer;
+}
+
+.productBox div img {
+  transition: .5s all ease-in-out;
+  justify-self: center;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.productBox .quickView {
+  justify-self: center;
+  align-self: center;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  opacity: 0;
+  background: black;
+  color: white;
+  padding: 10px 20px;
+  transition: .5s all ease;
+  font-size: .8rem;
+}
+
+.productBox div:hover img {
+  transform: scale(.95);
+  opacity: .9;
+}
+
+.productBox div:hover .quickView {
+  opacity: 1;
+  z-index: 2;
+}
+
+.productBox .quickView:hover {
+  background: white;
+  color: black;
+}
+
+@media only screen and (max-width: 1025px)
+{
+
+  .leftMenu, .rightMenu {
+    display: none;
+  }
+
+  .titleText h1 {
+    font-size: 4rem;
+  }
+
+  .nav-toggle-label {
+    display: inline;
+  }
+
+  nav div a {
+    font-size: 1.2rem;
+  }
+
+}
